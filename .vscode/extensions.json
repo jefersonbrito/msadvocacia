@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "aminkira.vscode-scp",
+    "natizyskunk.sftp"
+  ]
+}
