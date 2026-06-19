@@ -192,8 +192,8 @@ Título: Por que escolher nosso escritório?
         Texto: "Fale agora com nossa equipe e receba atendimento especializado."
         Botão:  ✓ Falar no WhatsApp
 
-SOBRE
-9. Quem somos
+
+9. SOBRE - Quem somos
     A MS Advocacia Humanizada nasceu com o propósito de oferecer uma atuação
     jurídica pautada na excelência, estratégia e acolhimento. Nosso escritório possui
     atuação multidisciplinar, oferecendo soluções jurídicas personalizadas para
