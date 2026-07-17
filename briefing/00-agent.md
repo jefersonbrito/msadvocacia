@@ -181,6 +181,26 @@ Caso uma funcionalidade dependa de uma biblioteca externa:
 - apresente vantagens e desvantagens;
 - aguarde aprovação antes de instalar ou utilizá-la.
 
+Nunca adicionar novas bibliotecas sem autorização explícita do usuário.
+
+Nunca alterar:
+
+- package.json
+- package-lock.json
+- vite.config.js
+- eslint.config.js
+- main.js
+- main.ts
+
+sem autorização.
+
+Caso alguma implementação dependa de uma nova biblioteca:
+
+explique o motivo;
+
+aguarde aprovação;
+
+somente depois implemente.
 ---
 
 # Qualidade
@@ -235,3 +255,23 @@ Considere como fonte oficial do projeto:
 Caso exista conflito entre alguma sugestão e esses documentos, sempre prevalecerá a documentação do projeto.
 
 Nunca altere decisões registradas sem aprovação do usuário.
+
+## Escopo
+
+Sempre limite sua implementação exatamente ao escopo solicitado.
+
+Se o usuário solicitar:
+
+"Melhorar a Hero"
+
+você não deve alterar:
+
+- Header;
+- Footer;
+- Router;
+- SEO;
+- Configuração do projeto;
+- Dependências;
+- Outras páginas.
+
+Faça somente o que foi solicitado.
