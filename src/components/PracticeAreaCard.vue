@@ -8,15 +8,36 @@ defineProps({
 
 <template>
   <article
-    class="group border-brand-dark/80 bg-brand-surface hover:border-brand-gold/30 relative overflow-hidden border p-8 transition-all duration-500 md:p-10"
+    class="group relative flex h-full min-h-[320px] flex-col overflow-hidden border border-brand-dark/80 bg-gradient-to-br from-brand-surface via-brand-surface to-brand-dark/90 p-8 transition-all duration-500 md:min-h-[340px] md:p-10"
+    :style="{ 'transition-timing-function': 'cubic-bezier(0.22, 1, 0.36, 1)' }"
   >
+    <!-- Background gradient effect -->
     <div
-      class="bg-brand-gold/5 absolute -top-12 -right-12 h-32 w-32 rounded-full blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-0"
+      class="absolute inset-0 bg-gradient-to-br from-brand-gold/0 via-brand-gold/0 to-brand-gold/0 transition-all duration-500 group-hover:from-brand-gold/5 group-hover:via-brand-gold/3 group-hover:to-brand-gold/2"
     />
+    
+    <!-- Border gradient effect -->
     <div
-      class="border-brand-gold/30 text-brand-gold mb-6 flex h-12 w-12 items-center justify-center border"
+      class="absolute inset-0 border border-transparent transition-all duration-500 group-hover:border-brand-gold/20"
+      :style="{ 'transition-timing-function': 'cubic-bezier(0.22, 1, 0.36, 1)' }"
+    />
+    
+    <!-- Icon container with refined design -->
+    <div
+      class="relative mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/10 to-brand-gold/5"
     >
-      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <div
+        class="absolute inset-0 rounded-full border border-brand-gold/20 transition-all duration-500 group-hover:border-brand-gold/40"
+        :style="{ 'transition-timing-function': 'cubic-bezier(0.22, 1, 0.36, 1)' }"
+      />
+      <svg
+        class="h-6 w-6 text-brand-gold transition-transform duration-500 group-hover:scale-110"
+        :style="{ 'transition-timing-function': 'cubic-bezier(0.22, 1, 0.36, 1)' }"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+      >
         <path
           v-if="icon === 'building'"
           stroke-linecap="round"
@@ -49,7 +70,24 @@ defineProps({
         />
       </svg>
     </div>
-    <h3 class="font-serif text-2xl text-brand-white">{{ title }}</h3>
-    <p class="text-brand-muted mt-4 text-sm leading-relaxed">{{ description }}</p>
+    
+    <!-- Content -->
+    <div class="relative flex-1">
+      <h3 class="font-serif text-2xl text-brand-white transition-colors duration-500 group-hover:text-brand-gold/90">
+        {{ title }}
+      </h3>
+      <p class="text-brand-muted mt-4 text-sm leading-relaxed transition-colors duration-500 group-hover:text-brand-white/80">
+        {{ description }}
+      </p>
+    </div>
+    
+    <!-- Subtle elevation effect -->
+    <div
+      class="absolute inset-0 shadow-lg transition-all duration-500 group-hover:shadow-xl group-hover:shadow-brand-gold/5"
+      :style="{
+        'box-shadow': '0 4px 20px -2px rgba(0, 0, 0, 0.2)',
+        'transition-timing-function': 'cubic-bezier(0.22, 1, 0.36, 1)'
+      }"
+    />
   </article>
 </template>
