@@ -38,3 +38,15 @@ Hero
 ## Observações
 
 Toda alteração deve ficar restrita à Home até sua aprovação.
+
+## Fluxo obrigatório para qualquer alteração
+
+1. Ler briefing/README.md.
+
+2. Verificar decisões já aprovadas.
+
+3. Verificar consistência visual.
+
+4. Verificar consistência do conteúdo com o briefing.
+
+5. Somente então implementar.

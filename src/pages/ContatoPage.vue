@@ -8,65 +8,137 @@ import { site, getWhatsAppUrl } from '@/data/site'
 <template>
   <div>
     <PageHeroSection
-      eyebrow="Contato"
-      title="Vamos conversar"
-      description="Entre em contato por formulário, WhatsApp ou visite nosso escritório. Retornamos em até 24 horas úteis."
+      eyebrow="Inicie seu atendimento"
+      title="Fale com nossa equipe"
+      description="Escolha o canal de sua preferência para entrar em contato com nossa equipe. Estamos à disposição para compreender sua necessidade e orientar os próximos passos."
     />
 
-    <section class="section-padding">
-      <div class="container-wide grid gap-16 lg:grid-cols-2">
-        <div>
-          <h2 class="font-serif text-2xl text-brand-white">Envie sua mensagem</h2>
-          <p class="text-brand-muted mt-3 text-sm leading-relaxed">
-            Preencha o formulário e nossa equipe analisará sua demanda com a devida atenção e
-            sigilo.
-          </p>
-          <ContactForm class="mt-8" />
+    <!-- Main content section with photo and contact options -->
+    <section class="section-padding relative overflow-hidden bg-gradient-to-b from-brand-black via-brand-black/95 to-brand-black/90">
+      <!-- Subtle pattern overlay -->
+      <div
+        class="absolute inset-0 opacity-[0.02]"
+        :style="{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(200, 169, 107, 0.2) 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }"
+        aria-hidden="true"
+      />
+      
+      <div class="container-wide relative">
+        <div class="flex flex-col gap-16 lg:flex-row lg:gap-20 lg:items-start">
+          <!-- Photo column -->
+          <div class="lg:w-2/5">
+            <div class="relative overflow-hidden rounded-lg border border-brand-gold/10 bg-brand-surface shadow-xl">
+              <div class="aspect-[3/4] overflow-hidden">
+                <img
+                  src="/images/institucional/foto_dr_marilia_CONTATO.jpg"
+                  alt="Dra. Marília - Advogada especialista em direito empresarial"
+                  class="h-full w-full object-cover"
+                  loading="lazy"                />
+              </div>
+              <!-- Subtle gradient overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-brand-black/30 via-transparent to-transparent"
+                aria-hidden="true"
+              />
+              <!-- Border effect -->
+              <div
+                class="absolute inset-0 border border-brand-gold/5"
+              />
+            </div>
+          </div>
+
+          <!-- Contact content column -->
+          <div class="lg:w-3/5">
+            <div class="max-w-2xl">
+              <!-- WhatsApp as primary action -->
+              <div class="mb-12">
+                <h2 class="font-serif text-3xl text-brand-white md:text-4xl">
+                  Fale conosco pelo WhatsApp
+                </h2>
+                <p class="text-brand-muted mt-4 text-lg">
+                  Nosso principal canal para agendamentos e orientações iniciais.
+                </p>
+                <BaseButton 
+                  :href="getWhatsAppUrl()" 
+                  external 
+                  variant="whatsapp"
+                  class="mt-6 group relative overflow-hidden"
+                  :style="{ 'transition-timing-function': 'cubic-bezier(0.22, 1, 0.36, 1)' }"
+                >
+                  <span class="relative z-10">Conversar pelo WhatsApp</span>
+                  <div
+                    class="absolute inset-0 bg-gradient-to-r from-green-600/0 via-green-600/10 to-green-0/0 transition-all duration-500 group-hover:from-green-600/20 group-hover:via-green-600/30 group-hover:to-green-600/20"
+                    aria-hidden="true"/>
+                </BaseButton>
+              </div>
+
+              <!-- Alternative contact methods -->
+              <div class="grid gap-8 md:grid-cols-2">
+                <div class="border-l-2 border-brand-gold/30 pl-5 py-2">
+                  <h3 class="font-serif text-lg text-brand-white">Telefone direto</h3>
+                  <p class="text-brand-muted mt-2 text-sm">
+                    {{ site.phone }}
+                  </p>
+                </div>
+                
+                <div class="border-l-2 border-brand-gold/30 pl-5 py-2">
+                  <h3 class="font-serif text-lg text-brand-white">E-mail</h3>
+                  <a 
+                    :href="`mailto:${site.email}`" 
+                    class="text-brand-muted hover:text-brand-gold mt-2 text-sm transition-colors duration-300"
+                  >
+                    {{ site.email }}
+                  </a>
+                </div>
+              </div>
+
+              <!-- Contact form section -->
+              <div class="mt-12">
+                <h2 class="font-serif text-2xl text-brand-white">Formulário de contato</h2>
+                <p class="text-brand-muted mt-3 text-sm leading-relaxed">
+                  Descreva sua situação para que possamos compreender como podemos ajudá-lo.
+                </p>
+                <ContactForm class="mt-8" />
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="space-y-10">
+    <!-- Location and address section -->
+    <section class="section-padding">
+      <div class="container-wide">        <div class="grid gap-16 lg:grid-cols-2">
           <div>
-            <h3 class="label-eyebrow mb-4">WhatsApp</h3>
-            <p class="text-brand-muted mb-4 text-sm">
-              Atendimento ágil para dúvidas e agendamentos.
-            </p>
-            <BaseButton :href="getWhatsAppUrl()" external variant="whatsapp">
-              Iniciar conversa
-            </BaseButton>
-          </div>
-
-          <div>
-            <h3 class="label-eyebrow mb-4">Informações</h3>
-            <ul class="text-brand-muted space-y-3 text-sm">
-              <li>
-                <span class="text-brand-white">Telefone:</span> {{ site.phone }}
-              </li>
-              <li>
-                <span class="text-brand-white">E-mail:</span>
-                <a :href="`mailto:${site.email}`" class="hover:text-brand-gold transition-colors">
-                  {{ site.email }}
-                </a>
-              </li>
-              <li>
-                <span class="text-brand-white">Endereço:</span><br />
-                {{ site.address.street }}<br />
+            <h2 class="font-serif text-2xl text-brand-white">Visite nosso escritório</h2>
+            <div class="mt-6 space-y-4">
+              <p class="text-brand-muted text-sm">
+                <span class="text-brand-white font-medium">Endereço:</span><br>
+                {{ site.address.street }}<br>
                 {{ site.address.city }} — CEP {{ site.address.cep }}
-              </li>
-            </ul>
+              </p>
+              <p class="text-brand-muted text-xs">                Agende previamente sua visita para melhor atendimento.
+              </p>
+            </div>
           </div>
 
           <div>
-            <h3 class="label-eyebrow mb-4">Localização</h3>
-            <div
-              class="border-brand-dark bg-brand-surface flex aspect-video items-center justify-center border"
-            >
-              <iframe
-                title="Localização MS Advocacia"
-                class="h-full w-full grayscale opacity-80"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197!2d-46.655!3d-23.561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjYiUyA0NsKwMzknMTguMCJX!5e0!3m2!1spt-BR!2sbr!4v1"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allowfullscreen
+            <div class="relative overflow-hidden rounded-lg border border-brand-gold/10 bg-brand-surface shadow-xl">
+              <div class="aspect-video">
+                <iframe
+                  title="Localização MS Advocacia"
+                  class="h-full w-full grayscale opacity-80"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!m3!1d3657.197!2d-46.655!3d-23.561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzQxLjYiUyA0NsKwMzknMTguMCJX!5e0!3m2!1spt-BR!2sbr!4v1"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                />
+              </div>
+              <!-- Border effect -->
+              <div
+                class="absolute inset-0 border border-brand-gold/5"
               />
             </div>
           </div>
