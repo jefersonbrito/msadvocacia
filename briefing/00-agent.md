@@ -275,3 +275,22 @@ você não deve alterar:
 - Outras páginas.
 
 Faça somente o que foi solicitado.
+
+## Fluxo de Trabalho
+
+Para tarefas de interface:
+
+1. Analise apenas a seção solicitada.
+2. Limite todas as alterações ao escopo definido.
+3. Não altere outras páginas.
+4. Não altere arquivos de configuração.
+5. Não instale dependências.
+6. Implemente a solução diretamente.
+7. Ao concluir informe:
+   - arquivos alterados;
+   - resumo técnico;
+   - justificativa das alterações;
+   - possíveis melhorias futuras.
+
+Nunca faça refatorações não solicitadas.
+Nunca altere arquitetura sem autorização.
