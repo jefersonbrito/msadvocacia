@@ -38,15 +38,14 @@ onUnmounted(() => {
     <div class="container-wide flex items-center justify-between px-6 py-5 md:px-10 lg:px-16">
       <RouterLink
         :to="{ name: 'home' }"
-        class="group flex flex-col"
+        class="group flex items-center"
         @click="closeMenu"
       >
-        <span class="font-serif text-xl tracking-wide text-brand-white transition-colors group-hover:text-brand-gold md:text-2xl">
-          MS
-        </span>
-        <span class="text-brand-muted hidden text-[10px] tracking-[0.2em] uppercase sm:block">
-          Advocacia e Consultoria
-        </span>
+        <img
+          src="/images/logos/logo.png"
+          alt="MS Advocacia e Consultoria"
+          class="h-8 transition-opacity group-hover:opacity-90 md:h-10"
+        />
       </RouterLink>
 
       <nav class="hidden items-center gap-10 lg:flex" aria-label="Principal">
