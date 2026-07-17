@@ -32,23 +32,24 @@ onUnmounted(() => {
     :class="[
       isScrolled || isMenuOpen || route.name !== 'home'
         ? 'border-brand-dark/80 bg-brand-black/95 border-b backdrop-blur-md'
-        : 'bg-transparent',
+        : 'bg-brand-black/30',
     ]"
   >
-    <div class="container-wide flex items-center justify-between px-6 py-5 md:px-10 lg:px-16">
-      <RouterLink
-        :to="{ name: 'home' }"
-        class="group flex items-center"
-        @click="closeMenu"
-      >
-        <img
-          src="/images/logos/logo.png"
-          alt="MS Advocacia e Consultoria"
-          class="h-8 transition-opacity group-hover:opacity-90 md:h-10"
-        />
-      </RouterLink>
+    <div class="container-wide flex items-center justify-between gap-10 px-6 py-4 md:px-10 lg:px-16"
+>
+    <RouterLink
+      :to="{ name: 'home' }"
+      class="group flex items-center shrink-0"
+      @click="closeMenu"
+    >
+      <img
+        src="/images/logos/logo.png"
+        alt="MS Advocacia e Consultoria"
+        class="h-12 w-auto transition-transform duration-300 ease-out group-hover:scale-[1.03] h-12 md:h-16 xl:h-[72px]"
+      />
+    </RouterLink>
 
-      <nav class="hidden items-center gap-10 lg:flex" aria-label="Principal">
+      <nav class="hidden items-center gap-12 xl:gap-14 lg:flex" aria-label="Principal">
         <RouterLink
           v-for="item in navigation"
           :key="item.label"
