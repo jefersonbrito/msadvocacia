@@ -61,7 +61,7 @@ import { site, navigation, getWhatsAppUrl } from '@/data/site'
         class="border-brand-dark/60 text-brand-muted mt-16 flex flex-col items-center justify-between gap-4 border-t pt-8 text-xs md:flex-row"
       >
         <p>&copy; {{ new Date().getFullYear() }} {{ site.name }}. Todos os direitos reservados.</p>
-        <p class="tracking-wide">OAB/SP — inscrição fictícia para demonstração</p>
+        <p class="tracking-wide">OAB/BA — inscrição profissional</p>
       </div>
     </div>
   </footer>

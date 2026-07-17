@@ -3,19 +3,19 @@ export const site = {
   shortName: 'MS Advocacia',
   tagline: 'Advocacia estratégica para quem exige excelência.',
   whatsapp: {
-    number: '5511999999999',
+    number: '5571993724045',
     message: 'Olá! Gostaria de falar com a MS Advocacia e Consultoria.',
   },
-  email: 'contato@msadvocacia.com.br',
-  phone: '(11) 3000-0000',
+  email: 'contato@msadvocaciaeconsultoria.com.br',
+  phone: '(71) 99372-4045',
   address: {
-    street: 'Av. Paulista, 1000 — Bela Vista',
-    city: 'São Paulo — SP',
-    cep: '01310-100',
+    street: 'Edifício Cidade do Salvador, nº 397, sala 606',
+    city: 'Salvador - BA',
+    cep: '',
   },
   social: {
-    linkedin: 'https://linkedin.com',
-    instagram: 'https://instagram.com',
+    linkedin: '',
+    instagram: '',
   },
 }
 
